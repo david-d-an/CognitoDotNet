@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AWSLambdaCognitoOpenIDConnect.Controllers
+namespace CognitoDotNet.WebApp.Controllers
 {
     public class HomeController : Controller
     {
