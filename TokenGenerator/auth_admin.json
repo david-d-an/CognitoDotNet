@@ -1,0 +1,10 @@
+{
+    "UserPoolId": "us-east-2_3fV3OuG6q",
+    "ClientId": "d2rtg9rnht9mc0u89mups2lkp",
+    "AuthFlow": "ADMIN_NO_SRP_AUTH",
+    "AuthParameters": {
+        "USERNAME": "superdavid73@hotmail.com",
+        "PASSWORD": "Soil9303",
+        "SECRET_HASH": "AzOjNeoYH7KQSMvb80RjlEbdw6HDkEb87YQS1kcU1tI="
+    }
+}
