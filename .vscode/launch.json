@@ -2,14 +2,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET 5.0",
+            "name": "Web",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build5.0",
+            "preLaunchTask": "buildWeb",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/WebAppCognito/bin/Debug/net5.0/WebAppCognito.dll",
+            "program": "${workspaceFolder}/WebApp/bin/Debug/net5.0/WebApp.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/WebAppCognito",
+            "cwd": "${workspaceFolder}/WebApp",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",
