@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiApp", "ApiApp\ApiApp.csproj", "{183564E0-CB81-4F18-B90F-0C9B9DB8D552}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{EA8C20B5-A253-495A-BBD8-F04588B7C32B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{183564E0-CB81-4F18-B90F-0C9B9DB8D552}.Release|x64.Build.0 = Release|Any CPU
 		{183564E0-CB81-4F18-B90F-0C9B9DB8D552}.Release|x86.ActiveCfg = Release|Any CPU
 		{183564E0-CB81-4F18-B90F-0C9B9DB8D552}.Release|x86.Build.0 = Release|Any CPU
+		{EA8C20B5-A253-495A-BBD8-F04588B7C32B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA8C20B5-A253-495A-BBD8-F04588B7C32B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA8C20B5-A253-495A-BBD8-F04588B7C32B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EA8C20B5-A253-495A-BBD8-F04588B7C32B}.Debug|x64.Build.0 = Debug|Any CPU
+		{EA8C20B5-A253-495A-BBD8-F04588B7C32B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EA8C20B5-A253-495A-BBD8-F04588B7C32B}.Debug|x86.Build.0 = Debug|Any CPU
+		{EA8C20B5-A253-495A-BBD8-F04588B7C32B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA8C20B5-A253-495A-BBD8-F04588B7C32B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA8C20B5-A253-495A-BBD8-F04588B7C32B}.Release|x64.ActiveCfg = Release|Any CPU
+		{EA8C20B5-A253-495A-BBD8-F04588B7C32B}.Release|x64.Build.0 = Release|Any CPU
+		{EA8C20B5-A253-495A-BBD8-F04588B7C32B}.Release|x86.ActiveCfg = Release|Any CPU
+		{EA8C20B5-A253-495A-BBD8-F04588B7C32B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
