@@ -67,7 +67,7 @@ namespace ConsoleApp.Repositories {
                     Message = "EmailAddress not found."
                 };
             }
-            catch (NotAuthorizedException ex) {
+            catch (NotAuthorizedException) {
                 return new AuthResponseModel {
                     IsSuccess = false,
                     Message = "Incorrect username or password"
