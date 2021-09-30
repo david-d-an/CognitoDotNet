@@ -27,18 +27,21 @@ namespace WebAppCognito
         public void ConfigureServices(IServiceCollection services)
         {
             var clientId = Configuration["Authentication:Cognito:ClientId"];
-            var clientSecret = Configuration["Authentication:Cognito:ClientSecret"];
-            var baseUrl = Configuration["Authentication:Cognito:BaseUrl"];
             var logOutUrl = Configuration["Authentication:Cognito:LogOutUrl"];
+            // loggedOutUrl must match Sign out URL of Cognito App Client
+            var loggedOutUrl = Configuration["Authentication:Cognito:LoggedOutUrl"];
             var saveToken = bool.Parse(Configuration["Authentication:Cognito:SaveToken"]);
             var responseType = Configuration["Authentication:Cognito:ResponseType"];
             var metadataAddress = Configuration["Authentication:Cognito:MetadataAddress"];
+            // Client Secret and BaseUrl no longer used
+            // var clientSecret = Configuration["Authentication:Cognito:ClientSecret"];
+            // var baseUrl = Configuration["Authentication:Cognito:BaseUrl"];
 
             services.AddAuthentication(options => {
                 options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
-                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                // options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
             })
             .AddCookie(options => {
                 options.Events.OnSigningIn = FilterGroupClaims;
@@ -48,20 +51,20 @@ namespace WebAppCognito
                 options.ResponseType = responseType;
                 options.MetadataAddress = metadataAddress;
                 options.ClientId = clientId;
-                options.ClientSecret = clientSecret;
-                options.SaveTokens = saveToken;
-                options.GetClaimsFromUserInfoEndpoint = true;
-                // options.SignedOutRedirectUri = "https://localhost:15156/Account/LoggedOut/";
-                options.Scope.Add("email");
                 options.Events = new OpenIdConnectEvents {
                     OnRedirectToIdentityProviderForSignOut = (context) => {
                         var logoutUri = logOutUrl;
-                        logoutUri += $"?client_id={clientId}&logout_uri={baseUrl}/Account/LoggedOut/";
+                        logoutUri += $"?client_id={clientId}&logout_uri={loggedOutUrl}";
                         context.Response.Redirect(logoutUri);
                         context.HandleResponse();
                         return Task.CompletedTask;
                     }
                 };
+                // options.SaveTokens = saveToken;
+                // options.ClientSecret = clientSecret;
+                // options.GetClaimsFromUserInfoEndpoint = true;
+                // options.SignedOutRedirectUri = "https://www.google.com";
+                // options.Scope.Add("email");
             });
 
             services.AddControllersWithViews();
